@@ -1,0 +1,19 @@
+[package]
+name = "extract-samsung-firmware"
+version = "0.1.0"
+authors = ["Shuhao Tan <johnmave126@gmail.com>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "A utility to extract Samsung SSD firmware updator from iso image"
+keywords = ["cli", "samsung", "firmware"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+anyhow = "1.0.68"
+clap = { version = "4.1.4", features = ["derive"] }
+# cpio-archive = "0.7.0"
+# TODO: change to upstream after `https://github.com/indygreg/apple-platform-rs/pull/68` resolves
+cpio-archive = { git = "https://github.com/johnmave126/apple-platform-rs.git" }
+flate2 = "1.0.25"
+iso9660 = "0.1.0"
+path-slash = "0.2.1"
