@@ -8,6 +8,11 @@ description = "A utility to extract Samsung SSD firmware updator from iso image"
 keywords = ["cli", "samsung", "firmware"]
 categories = ["command-line-utilities"]
 
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+
 [dependencies]
 anyhow = "1.0.68"
 clap = { version = "4.1.4", features = ["derive"] }
