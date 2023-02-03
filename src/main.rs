@@ -6,6 +6,8 @@ use std::{
     io::{self, BufReader},
     path::PathBuf,
 };
+#[cfg(unix)]
+use std::{os::unix::fs::PermissionsExt, process::Command};
 
 use anyhow::{anyhow, ensure, Context};
 use clap::{Parser, ValueHint};
@@ -127,7 +129,8 @@ fn main() -> anyhow::Result<()> {
 
     #[cfg(target_os = "linux")]
     if cli.execute {
-        let work_dir = fs::canonicalize(cli.output_dir.join("fumagician"));
+        let work_dir = fs::canonicalize(cli.output_dir.join("fumagician"))
+            .context("cannot locate path of extracted files")?;
         let status = Command::new(work_dir.join("fumagician"))
             .current_dir(work_dir)
             .status()
