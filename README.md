@@ -1,6 +1,9 @@
 Extract Samsung Firmware
 ========================
 
+[![release](https://img.shields.io/github/release/johnmave126/extract-samsung-firmware?style=flat-square&logo=github)](https://github.com/johnmave126/extract-samsung-firmware/releases/latest)
+[![build status](https://img.shields.io/github/actions/workflow/status/johnmave126/extract-samsung-firmware/release.yml?branch=master&style=flat-square&logo=github)](https://github.com/johnmave126/extract-samsung-firmware/actions)
+
 A command line utility to extract Samsung SSD firmware updator from official iso images. Samsung is infamous for the awful Linux boot environment used by their firmware updators (read [this blog post](https://blog.quindorian.org/2021/05/firmware-update-samsung-ssd-in-linux.html/)). This utility automates the procedure in the blog post.
 
 # Usage
